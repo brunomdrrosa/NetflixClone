@@ -24,8 +24,9 @@ export const Inner = styled.div`
 
 export const Pane = styled.div`
   width: 50%;
+  padding: 0 5px;
 
-  @media (max-width: 11000px) {
+  @media (max-width: 1100px) {
     width: 100%;
     padding: 0 45px;
     text-align: center;
