@@ -28,7 +28,9 @@ export function BrowseContainer({ slides }) {
   }, [slides, category]);
 
   useEffect(() => {
-    const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
+    const fuse = new Fuse(slideRows, {
+      keys: ['data.description', 'data.title', 'data.genre'],
+    });
     const results = fuse.search(searchTerms).map(({ item }) => item);
 
     if (slideRows.length > 0 && searchTerms.length > 3 && results.length > 0) {
@@ -41,7 +43,7 @@ export function BrowseContainer({ slides }) {
   return profile.displayName ? (
     <>
       {loading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
-      <Header src="joker1" dontShowOnSmallViewPort>
+      <Header src="topgun" dontShowOnSmallViewPort>
         <Header.Frame>
           <Header.Group>
             <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
@@ -80,13 +82,16 @@ export function BrowseContainer({ slides }) {
           </Header.Group>
         </Header.Frame>
         <Header.Feature>
-          <Header.FeatureCallOut>Watch Joker Now</Header.FeatureCallOut>
+          <Header.FeatureCallOut>Watch Top Gun: Maverick</Header.FeatureCallOut>
           <Header.Text>
-            Forever alone in a crowd, failed comedian Arthur Fleck seeks
-            connection as he walks the streets of Gotham City. Arthur wears two
-            masks -- the one he paints for his day job as a clown, and the guise
-            he projects in a futile attempt to feel like he's part of the world
-            around him.
+            After more than thirty years of service as one of the Navy’s top
+            aviators, Pete “Maverick” Mitchell is where he belongs, pushing the
+            envelope as a courageous test pilot and dodging the advancement in
+            rank that would ground him. Facing an uncertain future and
+            confronting the ghosts of his past, Maverick is drawn into a
+            confrontation with his own deepest fears, culminating in a mission
+            that demands the ultimate sacrifice from those who will be chosen to
+            fly it.
           </Header.Text>
           <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
